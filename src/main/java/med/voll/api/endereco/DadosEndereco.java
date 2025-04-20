@@ -24,4 +24,9 @@ public record DadosEndereco(
         String complemento,
 
         String numero) {
+
+        // Construtor padrão, getters e setters são gerados automaticamente pelo Lombok
+        public Endereco toEntity() {
+                return new Endereco(logradouro, bairro, cep, cidade, uf, complemento, numero);
+        }
 }
