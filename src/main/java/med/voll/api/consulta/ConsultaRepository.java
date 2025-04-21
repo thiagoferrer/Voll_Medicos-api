@@ -1,14 +1,17 @@
-package med.voll.api.medico;
+package med.voll.api.consulta;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import med.voll.api.medico.Especialidade;
+import med.voll.api.medico.Medico;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import java.time.LocalDateTime;
-import java.util.Optional;
 
-public interface MedicoRepository extends JpaRepository<Medico, Long> {
-    Page<Medico> findAllByAtivoTrue(Pageable paginacao);
+import java.time.LocalDateTime;
+
+public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
+
+    boolean existsByPacienteIdAndDataBetween(Long idPaciente, LocalDateTime primeiroHorario, LocalDateTime ultimoHorario);
+
+    boolean existsByMedicoIdAndDataAndStatus(Long idMedico, LocalDateTime data, StatusConsulta status);
 
     @Query("""
             SELECT m FROM Medico m
@@ -22,5 +25,5 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             ORDER BY RAND()
             LIMIT 1
             """)
-    Optional<Medico> escolherMedicoAleatorioLivreNaData(Especialidade especialidade, LocalDateTime data);
+    Medico escolherMedicoAleatorioLivreNaData(Especialidade especialidade, LocalDateTime data);
 }
