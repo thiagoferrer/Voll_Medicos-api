@@ -1,10 +1,10 @@
 package med.voll.api.controller;
 
 import org.springframework.web.bind.annotation.*;
-import med.voll.api.consulta.DadosCadastroConsulta;
-import med.voll.api.consulta.DadosCancelamentoConsulta;
-import med.voll.api.consulta.AgendaDeConsultasService;
-import med.voll.api.consulta.DetalhesConsultaDto;
+import med.voll.api.domian.consulta.DadosCadastroConsulta;
+import med.voll.api.domian.consulta.DadosCancelamentoConsulta;
+import med.voll.api.domian.consulta.AgendaDeConsultasService;
+import med.voll.api.domian.consulta.DetalhesConsultaDto;
 
 @RestController
 @RequestMapping("/consultas")
