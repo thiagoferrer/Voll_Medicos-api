@@ -11,6 +11,6 @@ CREATE TABLE pacientes (
     numero VARCHAR(20),
     uf CHAR(2) NOT NULL,
     cidade VARCHAR(100) NOT NULL,
-    ativo TINYINT DEFAULT 1,  -- Removido (1) que causa o warning
+    ativo TINYINT(1) NOT NULL,  -- Removido (1) que causa o warning
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
