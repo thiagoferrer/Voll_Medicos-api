@@ -18,14 +18,13 @@ public class TratadorDeErros {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity tratarErro400(MethodArgumentNotValidException ex) {      // Método para tratar erro 400
+    public ResponseEntity tratarErro400(MethodArgumentNotValidException ex) {      // Metodo para tratar erro 400
         var erros = ex.getFieldErrors();
 
         return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
 
-    private record DadosErroValidacao(String campo,
-                                      String mensagem) {      // Classe interna para armazenar os dados de erro de validação
+    private record DadosErroValidacao(String campo, String mensagem) {      /* Classe interna para armazenar os dados de erro de validação*/
         public DadosErroValidacao(FieldError erro) {
             this(erro.getField(), erro.getDefaultMessage());
         }

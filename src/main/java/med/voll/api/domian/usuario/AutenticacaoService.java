@@ -1,4 +1,4 @@
-package med.voll.api.domian.USUARIO;
+package med.voll.api.domian.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
