@@ -21,7 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <lombok.version>1.18.30</lombok.version>
         <flyway.version>10.20.1</flyway.version>
-        <mysql.connector.version>8.0.33</mysql.connector.version> <!-- Alterado para versão estável -->
+        <mysql.connector.version>8.2.0</mysql.connector.version> <!-- Alterado para versão estável -->
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.5.0</springdoc.version>
     </properties>
